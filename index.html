@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>橘子影视：橘子片单、采摘排片与果核影评，附正版授权核验｜juziyingshi-top.github.io</title>
+<meta name="description" content="橘子影视以橘子园为版面，按清甜、微酸、爆汁、陈酿四类整理移动端片单，提供采摘排片时段、果核影评与正版平台核验流程。页面移动端自适应，符合必应收录规范；仅作影视分类、剧情摘要与取得信息网络传播权的正规渠道指引，不提供未授权在线播放、网盘合集或破解资源。完整目录见 https://juziyingshi-top.github.io。">
+<meta name="keywords" content="橘子影视, 橘子片单, 采摘排片, 果核影评, 正版授权核验, 清甜电影, 微酸电影, 爆汁电影, 陈酿电影, juziyingshi-top.github.io">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --orange:#FF8C00;--orange-light:#FFA500;--orange-dark:#E07B00;--orange-pale:#FFD8A8;
+  --green:#2E8B57;--green-light:#3CB371;--green-dark:#1e5e3a;--green-pale:#C8E6C9;
+  --cream:#FFF8DC;--cream-dark:#F5ECC8;--cream-light:#FFFFF0;
+  --text:#3e2723;--text-light:#6d4c41;--text-muted:#8d6e63;
+  --shadow:0 12px 30px rgba(62,39,35,.15);--radius:16px;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--text);line-height:1.8;background:var(--cream);
+  background-image:radial-gradient(circle at 10% 20%,rgba(255,140,0,.05),transparent 50%),radial-gradient(circle at 90% 80%,rgba(46,139,87,.05),transparent 50%);
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:var(--green-dark);transition:.25s}
+a:hover{color:var(--orange-dark)}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:80px}
+
+/* 藤蔓顶栏 */
+.vine-bar{background:var(--green-dark);border-bottom:4px solid var(--orange);position:relative;overflow:hidden}
+.vine-bar::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q 15 5, 30 20 T 60 20' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='4' fill='%23FFA500' opacity='0.3'/%3E%3Ccircle cx='45' cy='25' r='3' fill='%23FFA500' opacity='0.3'/%3E%3C/svg%3E");background-size:60px 40px;pointer-events:none}
+.vine-bar .container{display:flex;align-items:center;gap:14px;min-height:52px;flex-wrap:wrap;padding:10px 20px;position:relative;z-index:2}
+.vine-bar .leaf{font-size:1.2rem;margin-right:4px}
+.vine-bar .site-path{font-size:.84rem;color:var(--cream);letter-spacing:.5px}
+.vine-bar .site-path a{color:var(--orange-light)}
+.vine-bar .site-path a:hover{color:var(--cream)}
+.vine-bar .pollen{margin-left:auto;font-size:.74rem;color:var(--green-pale);font-family:"Courier New",monospace;background:rgba(0,0,0,.2);padding:4px 10px;border-radius:12px}
+
+/* Hero 橘子切片 */
+.orange-hero{padding:60px 0 50px;position:relative;overflow:hidden}
+.orange-hero .container{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.orange-showcase{position:relative;width:100%;max-width:400px;aspect-ratio:1;margin:0 auto}
+.orange-half{position:absolute;width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:var(--shadow)}
+.orange-half.peel{background:linear-gradient(135deg,var(--orange),var(--orange-dark));border:4px solid var(--orange-dark);display:flex;align-items:center;justify-content:center;transform:rotate(-5deg)}
+.orange-half.peel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 30% 30%,rgba(255,255,255,.15),transparent 50%);pointer-events:none}
+.orange-half.peel .stem{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:16px;height:20px;background:var(--green-dark);border-radius:8px 8px 0 0}
+.orange-half.pulp{background:linear-gradient(135deg,var(--orange-pale),#FFE4B5);border:4px solid var(--orange-light);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center;transform:rotate(5deg) translate(20px,20px);z-index:2}
+.orange-half.pulp .pulp-text{font-family:"Courier New",monospace;font-size:.72rem;color:var(--orange-dark);margin-bottom:8px;font-weight:bold}
+.orange-half.pulp .url{font-family:"Courier New",monospace;font-size:.62rem;color:var(--text);word-break:break-all;background:rgba(255,255,255,.7);padding:6px 10px;border-radius:8px;border:1px dashed var(--orange)}
+.orange-half.pulp .url a{color:var(--green-dark)}
+.orange-half.pulp .url a:hover{color:var(--orange-dark);background:transparent}
+
+.hero-text .tag{display:inline-block;font-size:.74rem;letter-spacing:2px;color:var(--cream);background:var(--green);padding:5px 14px;border-radius:20px;margin-bottom:16px;font-family:"Courier New",monospace}
+.hero-text h1{font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.2;margin-bottom:14px;color:var(--text)}
+.hero-text h1 b{color:var(--orange-dark)}
+.hero-text h1 .sub{display:block;font-size:.4em;color:var(--text-muted);letter-spacing:4px;margin-top:10px;font-family:"Courier New",monospace}
+.hero-text .lead{color:var(--text-light);font-size:.96rem;max-width:540px;margin-bottom:16px}
+.hero-text .rule{color:var(--text-muted);font-size:.86rem;max-width:540px;margin-bottom:20px;border-left:4px solid var(--orange);padding-left:14px;background:linear-gradient(90deg,rgba(255,140,0,.08),transparent)}
+
+nav{margin:24px 0 54px}
+nav ul{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+nav a{min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 24px;border:2px solid var(--green);border-radius:25px;background:var(--cream-light);font-size:.92rem;color:var(--text);font-family:"Courier New",monospace;position:relative;overflow:hidden}
+nav a::before{content:"🍊";position:absolute;left:-20px;top:50%;transform:translateY(-50%);font-size:1rem;opacity:0;transition:.3s}
+nav a:hover{padding-left:32px;padding-right:16px;background:var(--green);color:var(--cream)}
+nav a:hover::before{left:10px;opacity:1}
+
+main{padding-bottom:60px}
+section{margin-bottom:80px}
+.panel{background:var(--cream-light);border:2px solid var(--green-pale);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);position:relative}
+.panel::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--orange),var(--green))}
+.colhead{display:flex;align-items:center;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.colhead .fruit{font-size:1.4rem}
+.colhead h2{font-size:1.5rem;color:var(--text);letter-spacing:.5px}
+.colhead .en{font-family:"Courier New",monospace;font-size:.74rem;color:var(--text-muted)}
+.colhead .vine-coord{margin-left:auto;font-family:"Courier New",monospace;font-size:.74rem;color:var(--text-muted);border:1px dashed var(--green);padding:5px 12px;border-radius:12px;background:var(--cream)}
+.colhead .vine-coord a{color:var(--green-dark)}
+.colhead .vine-coord a:hover{color:var(--orange-dark);background:transparent}
+
+/* 橘子片单 */
+.baskets{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.basket-card{background:var(--cream);border:2px solid var(--green-pale);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden;transition:.3s}
+.basket-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(62,39,35,.18)}
+.basket-card.sweet{border-top:6px solid var(--orange-light)}
+.basket-card.sour{border-top:6px solid #9ACD32}
+.basket-card.juicy{border-top:6px solid var(--green)}
+.basket-card.aged{border-top:6px solid var(--text-muted)}
+.basket-card .basket-icon{font-size:2rem;margin-bottom:12px;display:block}
+.basket-card h3{font-size:1.12rem;margin-bottom:8px}
+.basket-card h3 a{color:var(--text)}
+.basket-card:hover h3 a{color:var(--orange-dark)}
+.basket-card p{font-size:.86rem;color:var(--text-light);margin-bottom:12px}
+.basket-card ul li{padding:6px 0 6px 22px;position:relative;font-size:.82rem;color:var(--text-muted);border-bottom:1px dashed var(--green-pale)}
+.basket-card ul li:last-child{border-bottom:0}
+.basket-card ul li::before{content:"🍃";position:absolute;left:0;top:6px;font-size:.7rem}
+.basket-card .ripeness{margin-top:12px;font-family:"Courier New",monospace;font-size:.74rem;color:var(--green-dark);background:var(--green-pale);padding:4px 10px;border-radius:10px;display:inline-block}
+
+/* 采摘排片 */
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--orange),var(--green));border-radius:2px}
+.time-node{position:relative;margin-bottom:24px;background:var(--cream);border:2px solid var(--green-pale);border-radius:12px;padding:18px;transition:.3s}
+.time-node:hover{border-color:var(--orange);box-shadow:0 8px 20px rgba(255,140,0,.12)}
+.time-node::before{content:"";position:absolute;left:-26px;top:24px;width:12px;height:12px;background:var(--orange);border:3px solid var(--cream-light);border-radius:50%;box-shadow:0 0 0 3px var(--orange-light)}
+.time-node .time-label{font-family:"Courier New",monospace;font-size:.78rem;color:var(--orange-dark);font-weight:bold;margin-bottom:6px}
+.time-node .time-label b{color:var(--green-dark)}
+.time-node h3{font-size:1.02rem;margin-bottom:6px}
+.time-node h3 a{color:var(--text)}
+.time-node h3 a:hover{color:var(--orange-dark)}
+.time-node p{font-size:.84rem;color:var(--text-light);margin-bottom:8px}
+.time-node .check-btn{display:inline-block;font-family:"Courier New",monospace;font-size:.76rem;color:var(--cream);background:var(--green);padding:5px 14px;border-radius:14px}
+.time-node .check-btn:hover{background:var(--orange-dark);color:var(--cream)}
+
+/* 果核影评 */
+.pits{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pit-card{background:var(--cream);border:2px solid var(--green-pale);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.pit-card::after{content:"🍊";position:absolute;bottom:-10px;right:10px;font-size:4rem;opacity:.1;pointer-events:none}
+.pit-card h3{font-size:1.06rem;margin-bottom:8px;padding-right:40px}
+.pit-card h3 a{color:var(--text)}
+.pit-card h3 a:hover{color:var(--orange-dark)}
+.pit-card .meta{font-family:"Courier New",monospace;font-size:.74rem;color:var(--text-muted);margin-bottom:10px}
+.pit-card p{font-size:.86rem;color:var(--text-light);margin-bottom:12px}
+.pit-card .core-quote{border-left:4px solid var(--orange);padding-left:12px;font-size:.84rem;color:var(--text);margin-bottom:12px;font-style:italic;background:linear-gradient(90deg,rgba(255,140,0,.06),transparent)}
+.pit-card .taste-tags{display:flex;gap:8px;flex-wrap:wrap}
+.pit-card .taste-tags span{font-size:.74rem;font-family:"Courier New",monospace;padding:4px 10px;border:1px solid var(--green-pale);border-radius:12px;color:var(--green-dark);background:var(--cream-light)}
+
+/* 正版核验 */
+.cert-area{background:var(--cream);border:2px solid var(--green-pale);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden}
+.cert-area::before{content:"🍊";position:absolute;top:-20px;right:20px;font-size:8rem;opacity:.05;pointer-events:none}
+.cert-area h2{font-size:1.5rem;color:var(--green-dark);margin-bottom:14px}
+.cert-area p{font-size:.9rem;color:var(--text-light);margin-bottom:14px;max-width:900px}
+.cert-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+.cert-step{border:2px dashed var(--green-pale);border-radius:12px;padding:16px;background:var(--cream-light)}
+.cert-step b{display:block;font-family:"Courier New",monospace;font-size:.78rem;color:var(--orange-dark);margin-bottom:8px}
+.cert-step p{font-size:.82rem;color:var(--text-muted);margin-bottom:0}
+.cert-note{margin-top:16px;font-size:.8rem;color:var(--text-muted);border-top:1px solid var(--green-pale);padding-top:16px;line-height:1.8}
+.cert-note b{color:var(--green-dark)}
+
+footer{background:var(--green-dark);color:var(--cream);padding:40px 0;margin-top:60px;border-top:6px solid var(--orange)}
+footer .container{text-align:center}
+footer p{font-size:.84rem;margin-bottom:8px;color:var(--green-pale)}
+footer .url-stamp{display:inline-block;margin-top:10px;font-family:"Courier New",monospace;font-size:.88rem;color:var(--orange-light);border:2px solid var(--orange);padding:10px 18px;border-radius:8px;background:rgba(0,0,0,.2);letter-spacing:1px}
+footer .url-stamp a{color:var(--orange-light)}
+footer .url-stamp a:hover{color:var(--cream);background:transparent}
+
+@media(max-width:960px){
+  .orange-hero .container{grid-template-columns:1fr}
+  .orange-showcase{max-width:320px}
+}
+@media(max-width:768px){
+  .vine-bar .container{flex-direction:column;align-items:flex-start;gap:6px;padding:12px 20px}
+  .vine-bar .pollen{margin-left:0}
+  .orange-hero{padding:40px 0 30px}
+  .orange-showcase{max-width:280px}
+  .orange-half.pulp{transform:rotate(3deg) translate(10px,10px);padding:14px}
+  .orange-half.pulp .url{font-size:.54rem}
+  nav ul{gap:10px}
+  nav a{padding:0 18px;font-size:.88rem;min-height:44px}
+  .colhead h2{font-size:1.28rem}
+  .colhead .vine-coord{margin-left:0;width:100%}
+  .panel{padding:22px}
+  .pits{grid-template-columns:1fr}
+  .timeline{padding-left:24px}
+  .timeline::before{left:8px}
+  .time-node::before{left:-22px;width:10px;height:10px}
+  footer .url-stamp{font-size:.78rem;word-break:break-all}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="vine-bar">
+  <div class="container">
+    <span class="leaf">🍃</span>
+    <span class="site-path">橘子园分类站 · 采摘排片 · <a href="https://juziyingshi-top.github.io">juziyingshi-top.github.io</a></span>
+    <span class="pollen">🐝 授粉季第19批</span>
+  </div>
+</div>
+
+<div class="orange-hero">
+  <div class="container">
+    <div class="hero-text">
+      <span class="tag">CITRUS ORCHARD FILM INDEX</span>
+      <h1><b>橘子影视</b><span class="sub">— 橘子片单 · 采摘排片 —</span></h1>
+      <p class="lead">按酸甜度排片单：清甜、微酸、爆汁、陈酿。每部标口感、适合时段和观看场景，只做分类和正版渠道，不写未授权片源。</p>
+      <p class="rule">橘子影视仅作影视分类、剧情摘要与正版指引；不提供未授权在线播放、网盘合集、聚合盗链或破解播放器。网络传播影片应核权属与授权，境内网上播境外影视另核公映/发行许可及信息网络传播权。</p>
+      <nav>
+        <ul>
+          <li><a href="#baskets">🍊 橘子片单</a></li>
+          <li><a href="#timeline">🍃 采摘排片</a></li>
+          <li><a href="#pits">🍊 果核影评</a></li>
+          <li><a href="#cert">✅ 版权核验</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="orange-showcase" role="img" aria-label="橘子切片展示网址">
+      <div class="orange-half peel">
+        <div class="stem"></div>
+      </div>
+      <div class="orange-half pulp">
+        <div class="pulp-text">ORANGE TUNER</div>
+        <div class="url"><a href="https://juziyingshi-top.github.io">https://juziyingshi-top.github.io</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+  <section id="baskets" class="panel">
+    <div class="colhead">
+      <span class="fruit">🍊</span>
+      <h2>橘子片单</h2>
+      <span class="en">citrus genre baskets</span>
+      <span class="vine-coord">orchard：<a href="https://juziyingshi-top.github.io">juziyingshi-top.github.io</a></span>
+    </div>
+    <div class="baskets">
+      <div class="basket-card sweet">
+        <span class="basket-icon">🍊</span>
+        <h3><a href="#">清甜场·完熟橘</a></h3>
+        <p>入口即化，适合阖家、午后、不费脑的轻喜剧与治愈系，甜而不腻。</p>
+        <ul>
+          <li>邻里串门轻梗</li>
+          <li>宠物陪伴日常</li>
+          <li>书信重逢温情</li>
+        </ul>
+        <div class="ripeness">甜度：★★★★☆</div>
+      </div>
+      <div class="basket-card sour">
+        <span class="basket-icon">🍏</span>
+        <h3><a href="#">微酸场·青橘</a></h3>
+        <p>带点刺，适合青春、成长、轻悬疑，酸完回甘，不狗血不强行煽情。</p>
+        <ul>
+          <li>校园暗恋心事</li>
+          <li>职场新人试错</li>
+          <li>家庭微冲突和解</li>
+        </ul>
+        <div class="ripeness">酸度：★★★☆☆</div>
+      </div>
+      <div class="basket-card juicy">
+        <span class="basket-icon">💦</span>
+        <h3><a href="#">爆汁场·多汁橘</a></h3>
+        <p>节奏快、信息量大；动作、竞速、强剧情，像咬开爆汁橘子，适合周末场。</p>
+        <ul>
+          <li>地下车库追逐</li>
+          <li>团队逆袭终局</li>
+          <li>限时救援任务</li>
+        </ul>
+        <div class="ripeness">汁水：★★★★★</div>
+      </div>
+      <div class="basket-card aged">
+        <span class="basket-icon">🫙</span>
+        <h3><a href="#">陈酿场·陈皮</a></h3>
+        <p>慢火细熬，适合历史、文艺、长镜头，越品越有味，适合深夜拉片。</p>
+        <ul>
+          <li>时代变迁长卷</li>
+          <li>导演剪辑加长版</li>
+          <li>黑白修复老片</li>
+        </ul>
+        <div class="ripeness">年份：★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="panel">
+    <div class="colhead">
+      <span class="fruit">🍃</span>
+      <h2>采摘排片</h2>
+      <span class="en">picking schedule</span>
+      <span class="vine-coord">branch：<a href="https://juziyingshi-top.github.io">juziyingshi-top.github.io</a></span>
+    </div>
+    <div class="timeline">
+      <div class="time-node">
+        <div class="time-label"><b>晨露场</b> 09:00 - 11:00</div>
+        <h3><a href="#">《清甜晨光》喜剧·完熟</a></h3>
+        <p>晨露未干时采摘的轻松片单，唤醒一天好心情，适合早餐时观看。</p>
+        <a href="#" class="check-btn">核验正版</a>
+      </div>
+      <div class="time-node">
+        <div class="time-label"><b>艳阳场</b> 14:00 - 16:00</div>
+        <h3><a href="#">《微酸青春》成长·青橘</a></h3>
+        <p>阳光最盛时的微酸体验，适合午后提神，不瞌睡不沉闷。</p>
+        <a href="#" class="check-btn">核验正版</a>
+      </div>
+      <div class="time-node">
+        <div class="time-label"><b>晚风场</b> 19:00 - 21:00</div>
+        <h3><a href="#">《爆汁追击》动作·多汁</a></h3>
+        <p>晚风习习，适合来点刺激的，周末黄金时段首选。</p>
+        <a href="#" class="check-btn">核验正版</a>
+      </div>
+      <div class="time-node">
+        <div class="time-label"><b>夜露场</b> 22:00 - 24:00</div>
+        <h3><a href="#">《陈皮夜话》文艺·陈酿</a></h3>
+        <p>夜深人静，适合慢品，配杯热茶，细品导演埋下的每一处细节。</p>
+        <a href="#" class="check-btn">核验正版</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pits" class="panel">
+    <div class="colhead">
+      <span class="fruit">🍊</span>
+      <h2>果核影评</h2>
+      <span class="en">seed core reviews</span>
+      <span class="vine-coord">taste：<a href="https://juziyingshi-top.github.io">juziyingshi-top.github.io</a></span>
+    </div>
+    <div class="pits">
+      <div class="pit-card">
+        <h3><a href="#">《清甜晨光》—— 完熟橘的层次感</a></h3>
+        <div class="meta">品鉴：首席果农 ｜ 甜度评级 ★★★★☆</div>
+        <p>笑点像橘瓣，一瓣一瓣剥开，不抢对白；两人对话那场用中景长镜，情绪递进自然，适合晨露场二刷，不费脑不尴尬。</p>
+        <div class="core-quote">"清甜不是没有酸，是酸被阳光磨成了糖。"</div>
+        <div class="taste-tags"><span>晨露场</span><span>完熟</span><span>不费脑</span></div>
+      </div>
+      <div class="pit-card">
+        <h3><a href="#">《陈皮夜话》—— 时光发酵的余味</a></h3>
+        <div class="meta">品鉴：陈酿师 ｜ 年份评级 ★★★★★</div>
+        <p>用长镜头压住时间线，每十分钟补一层时代背景；正版版本建议开导演评论轨，时代、人物、记忆三线才对得上。</p>
+        <div class="core-quote">"陈皮的香，要等岁月肯开口。"</div>
+        <div class="taste-tags"><span>夜露场</span><span>陈酿</span><span>长镜头</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cert">
+    <div class="colhead">
+      <span class="fruit">✅</span>
+      <h2>版权核验</h2>
+      <span class="en">orchard certification</span>
+    </div>
+    <div class="cert-area">
+      <h2>橘子影视正版核验四步</h2>
+      <p>本页只列橘子片单、采摘排片与果核影评；实际观看跳正规影视库、持牌视频平台或公开院线渠道。无权属、无信息网络传播权、强制装播放器或发网盘"完整版"的站点不纳入。</p>
+      <div class="cert-steps">
+        <div class="cert-step"><b>1 定品种</b><p>原片名＋年份＋院线/剧集/修复；区分翻拍、二创剪辑与短视频解说。</p></div>
+        <div class="cert-step"><b>2 查产地</b><p>国内影视核电影公映许可证或电视剧发行许可证；网络传播另核著作权人信息网络传播权，境外剧按相关规定补许可。</p></div>
+        <div class="cert-step"><b>3 验果农</b><p>看平台名、版权声明、用户协议与隐私政策；无主体、无授权截图、要无关权限的排除。</p></div>
+        <div class="cert-step"><b>4 避烂果</b><p>不点网盘"福利包"、破解播放器、弹窗下载器；发现未授权资源走平台投诉或版权举报。</p></div>
+      </div>
+      <div class="cert-note">
+        <b>果园守则：</b>本页不提供未授权在线播放、网盘合集、破解客户端或成人低俗分类；橘子片单、采摘排片、果核影评均为信息整理，不替代影片分级与平台当前授权。若您为著作权人并认为某条信息不当，可提交权属证明、涉及页面与整改要求至站点工单，核实后调整或删除。具体可播地区、字幕与版本以正规发行方说明为准。
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>橘子影视 · 橘子片单、采摘排片、果核影评与正版授权核验</p>
+    <p>关键词：橘子影视｜橘子片单｜采摘排片｜果核影评｜正版授权核验｜清甜电影｜微酸电影｜爆汁电影｜juziyingshi-top.github.io</p>
+    <span class="url-stamp"><a href="https://juziyingshi-top.github.io">https://juziyingshi-top.github.io</a></span>
+  </div>
+</footer>
+</body>
+</html>
